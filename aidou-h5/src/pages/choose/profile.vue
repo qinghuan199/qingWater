@@ -11,7 +11,7 @@
 			<p class="name">{{ this.xuanfeidata.xuanfei_name }}</p>
 			<p class="title">{{ this.xuanfeidata.vo_title }}</p>
 			<van-image width="98%" fit="contain" height="100%" v-for="(v, k) in xuanfeidata.img_url" :key="k" :src="v" />
-			<van-button round="true" @click="show = !show" class="button"
+			<van-button round @click="show = !show" class="button"
 				>立即打榜</van-button>
 		</div>
 
@@ -19,7 +19,7 @@
 			<div style="display: flex; flex-direction: column;align-items: center;padding: 10px 30px;">
 				<h4 style="margin: 10px 0;">投票打赏</h4>
 				<van-field v-model="value" placeholder="请输入主播编号" />
-				<van-button round="true" class="button"	@click="$router.push({ path: '/Lottery?key=game2&id=12' })">确定</van-button>
+				<van-button round class="button"	@click="$router.push({ path: '/Lottery?key=game2&id=12' })">确定</van-button>
 			</div>
 		</van-popup>
 	</div>

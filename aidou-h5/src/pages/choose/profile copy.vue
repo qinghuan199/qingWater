@@ -9,7 +9,7 @@
 			<p class="name">{{ this.xuanfeidata.xuanfei_name }}</p>
 			<p class="title">{{ this.xuanfeidata.vo_title }}</p>
 			<van-image width="98%" fit="contain" height="100%" v-for="(v, k) in xuanfeidata.img_url" :key="k" :src="v" />
-			<van-button round="true" @click="yuyue" class="button" color="linear-gradient(to right, #7f5778 , #e5c2a0)">预约</van-button>
+			<van-button round @click="yuyue" class="button" color="linear-gradient(to right, #7f5778 , #e5c2a0)">预约</van-button>
 		</div>
 	</div>
 </template>

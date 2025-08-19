@@ -8,7 +8,7 @@
             <div style="display: flex; flex-direction: column;align-items: center;padding: 10px 30px;">
                 <h4 style="margin: 10px 0;">投票打赏</h4>
                 <van-field v-model="value" placeholder="请输入主播编号" />
-                <van-button round="true" class="button" 
+                <van-button round class="button" 
                     @click="$router.push({ path: '/Lottery?key=game2&id=12' })">确定</van-button>
             </div>
         </van-popup>

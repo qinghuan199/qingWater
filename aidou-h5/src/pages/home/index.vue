@@ -46,7 +46,8 @@
 
       <div class="nav">
         <p class="nav-item" :class="{ 'active': active == 0 }" @click="active = 0">{{ tip.title }}</p>
-        <p class="nav-item" :class="{ 'active': active != 0 }" @click="active = 1">服务条款</p>
+        <p class="nav-item" :class="{ 'active': active == 1 }" @click="active = 1">服务条款</p>
+        <p class="nav-item" :class="{ 'active': active == 2 || hasSelectedAddress }"  @click="$router.push('/Address')" >{{ selectedAddressName }}</p>
       </div>
       <van-pull-refresh border="false" class="list-wrapper" v-model="isLoading" @refresh="onRefresh" v-if="active == 0">
         <van-grid :column-num="2" :gutter="10">
@@ -60,7 +61,7 @@
           </van-grid-item>
         </van-grid>
         <div style="text-align: center;">
-          <van-button round="true" @click="gotoMenu('/Choose')" class="button" color="#be9f80">查看更多</van-button>
+          <van-button round @click="gotoMenu('/Choose')" class="button" color="#be9f80">查看更多</van-button>
         </div>
         <!-- <div class="hot-recommend-more" @click="gotoMenu('/Choose')">查看更多</div> -->
       </van-pull-refresh>
@@ -94,6 +95,8 @@ export default {
       movielist_0: [{}, {}, {}, {}],
       movielist_1: [{}, {}, {}, {}, {}, {}, {}, {}],
       isLoading: false,
+      selectedAddressName: '地区选择',
+      hasSelectedAddress: false,
       movielistSwiperOption: {
         slidesPerView: 'auto',
         spaceBetween: 0,
@@ -176,7 +179,7 @@ export default {
       this.$http({
         method: 'get',
         url: 'xuanfeilist',
-        data: { id: this.$route.query.id || 1 }
+        data: { id: this.$route.query.addressId || 1 }
       }).then(res => {
         this.datalist = res.data;
       });
@@ -214,8 +217,14 @@ export default {
 
   },
   created() {
+    // 检查路由参数中是否有地区名称
+    if (this.$route.query.addressName) {
+      this.selectedAddressName = this.$route.query.addressName;
+      this.hasSelectedAddress = true;
+    }
     this.getBasicConfig();
     this.gettip();
+    this.getxuanfeilist();
   }
 }
 
@@ -539,6 +548,12 @@ export default {
 .hot-title-div>div:nth-child(2) span {
   font-size: 20px;
   color: #979799;
+}
+
+.hot-title-div>div:first-child span {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .hot-title-div>div:first-child span {

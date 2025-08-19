@@ -29,8 +29,7 @@ import Withdraw  from '../pages/mine/Withdraw'/* 绑定银行卡界面 */
 import Personalreport  from '../pages/mine/Personalreport'/* 个人表报 */
 import GameRecord  from '../pages/mine/GameRecord'/* 游戏记录 */
 import WithdrawRecord  from '../pages/mine/WithdrawRecord'/* 提现记录 */
-
-
+import Address from '../pages/address/index.vue' /* 地区选择 */
 
 
 
@@ -66,6 +65,7 @@ const routes = [
     {path:'/Personalreport',name:'Personalreport',component:Personalreport,meta:{title:'个人报表'}},
     {path:'/WithdrawRecord',name:'WithdrawRecord',component:WithdrawRecord,meta:{title:'提现记录'}},
     {path:'/GameRecord',name:'GameRecord',component:GameRecord,meta:{title:'任务记录'}},
+    {path:'/Address',name:'Address',component:Address,meta:{title:'地区选择'}},
 
 
 ];
