@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: transparent;
+}
+
+.carousel-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    min-width: 100%;
+    text-align: center;
+    padding: 0 20px;
+    transition: all 0.3s ease;
+}
+
+.carousel-item img {
+    width: 100%;
+    max-width: 350px;
+    height: auto; /* 需要固定高度来确保圆形效果 */
+    object-fit: cover; /* 确保图片填充容器而不变形 */
+    border-radius: 50%; /* 设置为圆形 */
+    display: block;
+    margin: 0 auto;
+}
+
+ /* 默认（桌面） */
+.carousel-item img {
+    max-width: 350px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 平板（768px 及以下） */
+@media (max-width: 768px) {
+    .carousel-item img {
+        max-width: 300px;
+    }
+}
+
+/* 手机（480px 及以下） */
+@media (max-width: 480px) {
+    .carousel-item img {
+        max-width: 200px;
+    }
+}
+.carousel-item span {
+    display: block;
+    font-size: 1.2rem;
+    margin-top: 15px;
+    color: #333;
+    padding: 0 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.carousel-item.active {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.carousel-item:not(.active) {
+    opacity: 0.6;
+    transform: scale(0.9);
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        padding: 0 10px;
+    }
+    
+    .carousel-item img {
+        max-width: 80%;
+    }
+    
+    .carousel-item span {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item img {
+        max-width: 70%;
+    }
+    
+    .carousel-item span {
+        font-size: 0.9rem;
+    }
+}

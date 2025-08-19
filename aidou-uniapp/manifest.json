@@ -1,0 +1,244 @@
+{
+    "name" : "默聊",
+    "appid" : "__UNI__9184BB5",
+    "description" : "默聊_im",
+    "versionName" : "1.1.2",
+    "versionCode" : 112,
+    "transformPx" : false,
+    "networkTimeout" : {
+        "request" : 6000,
+        "connectSocket" : 10000,
+        "uploadFile" : 60000,
+        "downloadFile" : 6000
+    },
+    "app-plus" : {
+        /* 是否启用`自定义组件模式`，为true表示新的`自定义组件模式` ，否则为`template模板模式` */
+        "usingComponents" : true,
+        "compatible" : {
+            "ignoreVersion" : true //true表示忽略版本检查提示框，HBuilderX1.9.0及以上版本支持  
+        },
+        /* 5+App特有相关 */
+        "modules" : {
+            "Maps" : {},
+            "Messaging" : {},
+            "Payment" : {},
+            "Webview-x5" : {},
+            "Geolocation" : {},
+            "Speech" : {},
+            "Share" : {},
+            "Push" : {},
+            "Barcode" : {},
+            "Contacts" : {},
+            "Camera" : {},
+            "Record" : {},
+            "VideoPlayer" : {}
+        },
+        /* 模块配置 */
+        "distribute" : {
+            /* 应用发布信息 */
+            "android" : {
+                /* android打包配置 */
+                "permissions" : [
+                    "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
+                    "<uses-permission android:name=\"android.permission.INTERNET\"/>",
+                    "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.USE_FINGERPRINT\"/>",
+                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
+                ],
+                "abiFilters" : [ "armeabi-v7a", "arm64-v8a", "x86" ],
+                "targetSdkVersion" : 28,
+                "minSdkVersion" : 21,
+                "schemes" : "xi0ksa1u5"
+            },
+            "ios" : {
+                "idfa" : false,
+                "urltypes" : "xi0ksa1u5",
+                "capabilities" : {
+                    "entitlements" : {
+                        "com.apple.developer.associated-domains" : [
+                            "applinks:0ksa1u5.xinstall.top",
+                            "applinks:0ksa1u5.xinstall.net",
+                            "applinks:static-e19da9aa-83b5-466e-bf2a-8e460117cdf3.bspapp.com"
+                        ]
+                    }
+                },
+                "dSYMs" : false
+            },
+            /* ios打包配置 */
+            "sdkConfigs" : {
+                "speech" : {
+                    "ifly" : {}
+                },
+                "ad" : {},
+                "push" : {},
+                "payment" : {
+                    "alipay" : {
+                        "__platform__" : [ "ios", "android" ]
+                    },
+                    "appleiap" : {}
+                },
+                "maps" : {
+                    "amap" : {
+                        "appkey_ios" : "fd43ec22e590b49d681b107c58365f6e",
+                        "appkey_android" : "94893efafc639762107936837aa1b628"
+                    }
+                },
+                "geolocation" : {
+                    "baidu" : {
+                        "__platform__" : [ "ios", "android" ],
+                        "appkey_ios" : "fd43ec22e590b49d681b107c58365f6e",
+                        "appkey_android" : "94893efafc639762107936837aa1b628"
+                    }
+                },
+                "share" : {
+                    "qq" : {
+                        "appid" : "546546546",
+                        "UniversalLinks" : "https://static-e19da9aa-83b5-466e-bf2a-8e460117cdf3.bspapp.com/qq_conn/546546546/"
+                    },
+                    "weixin" : {
+                        "appid" : "546546546",
+                        "UniversalLinks" : "https://static-e19da9aa-83b5-466e-bf2a-8e460117cdf3.bspapp.com/uni-universallinks/__UNI__A2E5AF1/"
+                    }
+                }
+            },
+            "icons" : {
+                "ios" : {
+                    "appstore" : "unpackage/res/icons/1024x1024.png",
+                    "ipad" : {
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png"
+                    },
+                    "iphone" : {
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png"
+                    }
+                },
+                "android" : {
+                    "hdpi" : "unpackage/res/icons/72x72.png",
+                    "ldpi" : "unpackage/res/icons/48x48.png",
+                    "mdpi" : "unpackage/res/icons/48x48.png",
+                    "xhdpi" : "unpackage/res/icons/96x96.png",
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
+                }
+            },
+            "splashscreen" : {
+                "ios" : {
+                    "iphone" : {
+                        "portrait-896h@3x" : "C:/Users/Administrator/Pictures/bg.png",
+                        "landscape-896h@3x" : "",
+                        "portrait-896h@2x" : "C:/Users/Administrator/Pictures/bg.png",
+                        "landscape-896h@2x" : "",
+                        "iphonex" : "C:/Users/Administrator/Pictures/bg.png",
+                        "iphonexl" : "",
+                        "retina55" : "C:/Users/Administrator/Pictures/bg.png",
+                        "retina55l" : "",
+                        "retina47" : "C:/Users/Administrator/Pictures/bg.png",
+                        "retina47l" : "",
+                        "retina40" : "",
+                        "retina40l" : "",
+                        "retina35" : ""
+                    },
+                    "ipad" : {
+                        "portrait-1366h@2x" : "",
+                        "landscape-1366h@2x" : "",
+                        "portrait-1194h@2" : "",
+                        "landscape-1194h@2x" : "",
+                        "portrait-1112h@2x" : "",
+                        "landscape-1112h@2x" : "",
+                        "portrait-retina7" : "",
+                        "landscape-retina7" : "",
+                        "portrait7" : "",
+                        "landscape7" : "",
+                        "portrait-1194h@2x" : ""
+                    },
+                    "storyboard" : "H:/chrome浏览器下载/APP启动图/默认启动图/CustomStoryboard.zip"
+                },
+                "android" : {
+                    "xxhdpi" : "static/screen.png",
+                    "hdpi" : "/static/screen.png",
+                    "xhdpi" : "/static/screen.png"
+                },
+                "iosStyle" : "common",
+                "androidStyle" : "default",
+                "useOriginalMsgbox" : true
+            }
+        },
+        "nativePlugins" : {
+            "TencentCloud-TUICallKit" : {
+                "__plugin_info__" : {
+                    "name" : "TencentCloud-TUICallKit",
+                    "description" : "腾讯云音视频插件",
+                    "platforms" : "Android,iOS",
+                    "url" : "",
+                    "android_package_name" : "",
+                    "ios_bundle_id" : "",
+                    "isCloud" : false,
+                    "bought" : -1,
+                    "pid" : "",
+                    "parameters" : {}
+                }
+            }
+        },
+        "splashscreen" : {
+            "waiting" : false
+        }
+    },
+    /* SDK配置 */
+    "quickapp" : {},
+    /* 快应用特有相关 */
+    "mp-weixin" : {
+        /* 小程序特有相关 */
+        "appid" : "",
+        "setting" : {
+            "urlCheck" : true
+        }
+    },
+    "h5" : {
+        "devServer" : {
+            "https" : false,
+            "useLocalIp" : true
+        },
+        "title" : "微聊助手",
+        "domain" : "",
+        "optimization" : {
+            "treeShaking" : {
+                "enable" : false
+            }
+        },
+        "template" : "index.html"
+    },
+    "vueVersion" : "2",
+    "_qq_spaceID" : "e19da9aa-83b5-466e-bf2a-8e460117cdf3",
+    "_spaceID" : "e19da9aa-83b5-466e-bf2a-8e460117cdf3",
+    "fallbackLocale" : "zh-Hans",
+    "locale" : "auto"
+}

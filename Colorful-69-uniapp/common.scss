@@ -1,0 +1,209 @@
+.bg-color{
+	background-color: $bg-color;
+}
+
+.bg-main-color{
+	background-color: $main-color;
+}
+
+.bg-sub-color{
+	background-color: $sub-color;
+}
+
+.bg-main-color-light{
+	background-color: $main-color-light;
+}
+
+.bg-orange-light{
+	background-color: #FFF9F2;
+}
+
+.bg-white{
+	background-color: #FFFFFF;
+}
+
+.radius-full{
+	border-radius: 5000px;
+}
+
+.font-orange{
+	color: #FF7300;
+}
+.font-text-color{
+	color: $text-color;
+}
+.font-yellow{
+	color: #FFC53E;
+}
+
+.font-grey{
+	color: $custom-color-grey;
+}
+
+.font-gray{
+	color: $custom-color-gray;
+}
+
+.font-success{
+	color: $custom-color-success;
+}
+
+.font-error{
+	color: $custom-color-error;
+}
+
+.font-warning{
+	color: $uni-color-warning;
+}
+
+.font-white{
+	color: #fff;
+}
+
+.font-black {color: #000;}
+.font-bold{
+	font-weight: bold;
+}
+.flex-shrink {
+	flex-shrink: 0;
+}
+
+.font-main-color{
+	color: #237aff;
+}
+
+.font-sub-color{
+	color: #092B8E;
+}
+
+@for $i from 10 to 100 {
+	.font-size-#{$i} {
+		font-size: $i + px !important;
+	}
+}
+.fl_clum_center {display: flex;flex-direction: column;justify-content: center;align-items: center;}
+.fl_clum_start {display: flex;flex-direction: column;justify-content: flex-start;align-items: center;}
+.fl_clum_start2 {display: flex;flex-direction: column;justify-content: flex-start;align-items: flex-start;}
+.fl_clum_end {display: flex;flex-direction: column;justify-content: flex-end;align-items: center;}
+.fl_clum_arround {display: flex;flex-direction: column;justify-content: space-around;align-items: center;}
+.fl_clum_between {display: flex;flex-direction: column;justify-content:space-between;align-items: center;}
+.fl_between{display: flex;justify-content: space-between;align-items: center;}.fl_arround{display: flex;justify-content: space-around;align-items: center;}
+.fl_center{display: flex;justify-content: center;align-items: center;}
+.fl_start{display: flex;justify-content: start;align-items: center;}
+.fl_wrap{display: flex;flex-wrap: wrap;}
+.self_start{align-self: start;}
+.self_center{align-self: center;}
+.self_end{align-self: flex-end;}
+@for $i from 1 through 750 {
+	.width-#{$i} {
+		width: $i + rpx !important;
+	}
+	.max-width-#{$i} {
+		max-width: $i + rpx !important;
+	}
+	.height-#{$i} {
+		height: $i + rpx !important;
+	}
+}
+
+@for $i from 1 through 100 {
+	.icon-#{$i} {
+		width: $i + rpx !important;
+		height: $i + rpx !important;
+	}
+	.radius-#{$i} {
+		border-radius: $i + px !important;
+	}
+}
+
+.width-full{
+	width: 100%;
+}
+
+.height-full{
+	height: 100vh;
+}
+
+.shadow-grey{
+	box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.03);
+}
+
+.shadow-gray{
+	box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.05);
+}
+
+.border-grey{
+	border: 1px solid #F6F6F6;
+}
+
+.border-main-color{
+	border: 2px solid $main-color;
+}
+
+.border-gray{
+	border: 1px solid #DCDCDC;
+}
+
+.border-white{
+	border: 1px solid #FFFFFF;
+}
+
+.text-underline{
+	text-decoration: underline;
+}
+
+.text-line-through{
+	text-decoration: line-through;
+}
+
+.text-center{
+	text-align: center !important;
+}
+
+.text-right{
+	text-align: right;
+}
+
+@for $i from 0 through 200 {
+	@if $i % 2 == 0 or $i % 5 == 0 {
+		@for $j from 0 through 80 {
+			@if $j % 2 ==0 or $j % 5 ==0 {
+				.padding-#{$i}-#{$j}, .p-#{$i}-#{$j} {
+					padding: $i + rpx $j + rpx !important;
+				}
+				.margin-#{$i}-#{$j}, .m-#{$i}-#{$j} {
+					margin: $i + rpx $j + rpx !important;
+				}
+			}
+		}
+		.margin-#{$i}, .m-#{$i} {
+			margin: $i + rpx!important;
+		}
+		.padding-#{$i}, .p-#{$i} {
+			padding: $i + rpx!important;
+		}
+		@each $short, $long in l left, t top, r right, b bottom {
+			.m-#{$short}-#{$i} {
+				margin-#{$long}: $i + rpx!important;
+			}
+			.p-#{$short}-#{$i} {
+				padding-#{$long}: $i + rpx!important;
+			}
+			.margin-#{$long}-#{$i} {
+				margin-#{$long}: $i + rpx!important;
+			}
+			.padding-#{$long}-#{$i} {
+				padding-#{$long}: $i + rpx!important;
+			}
+		}
+	}
+}
+
+.status_bar {
+	height: var(--status-bar-height);
+	width: 100%;
+}
+
+.btn-gradient {
+	background: linear-gradient(to left, #033EC3, #31B6F7);
+}

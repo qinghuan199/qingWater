@@ -1,0 +1,40 @@
+{
+  "name": "profitero",
+  "version": "1.0.0",
+  "description": "Profitero uni-app project",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "dev:h5": "vite",
+    "build:h5": "vite build"
+  },
+  "dependencies": {
+    "@dcloudio/uni-app": "3.0.0-4020920240930001",
+    "@dcloudio/uni-app-plus": "3.0.0-4020920240930001",
+    "@dcloudio/uni-components": "3.0.0-4020920240930001",
+    "@dcloudio/uni-h5": "3.0.0-4020920240930001",
+    "@dcloudio/uni-mp-alipay": "3.0.0-4020920240930001",
+    "@dcloudio/uni-mp-baidu": "3.0.0-4020920240930001",
+    "@dcloudio/uni-mp-kuaishou": "3.0.0-4020920240930001",
+    "@dcloudio/uni-mp-lark": "3.0.0-4020920240930001",
+    "@dcloudio/uni-mp-qq": "3.0.0-4020920240930001",
+    "@dcloudio/uni-mp-toutiao": "3.0.0-4020920240930001",
+    "@dcloudio/uni-mp-weixin": "3.0.0-4020920240930001",
+    "@dcloudio/uni-mp-xhs": "3.0.0-4020920240930001",
+    "@dcloudio/uni-quickapp-webview": "3.0.0-4020920240930001",
+    "vue": "^3.4.21",
+    "vue-i18n": "^9.1.9"
+  },
+  "devDependencies": {
+    "@dcloudio/types": "^3.4.8",
+    "@dcloudio/uni-automator": "3.0.0-4020920240930001",
+
+    "@dcloudio/vite-plugin-uni": "3.0.0-4020920240930001",
+    "@vue/tsconfig": "^0.5.1",
+    "typescript": "^5.4.0",
+    "vite": "5.1.6",
+    "vue-tsc": "^2.0.6"
+  }
+}

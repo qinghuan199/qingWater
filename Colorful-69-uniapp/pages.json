@@ -1,0 +1,545 @@
+{
+	"pages": [ //pages數組中第壹項表示應用啟動頁，參考：https://uniapp.dcloud.io/collocation/pages
+		// {
+		// 	"path": "pages/verify/verify",
+		// 	"style": {
+		// 		"navigationBarTitleText": "Profitero",
+		// 		"navigationStyle": "custom"
+		// 	}
+		// },
+		// {
+		// 	"path": "pages/welcome/welcome",
+		// 	"style": {
+		// 		"navigationBarTitleText": "%welcome%",
+		// 		"enablePullDownRefresh": false,
+		// 		"navigationStyle": "custom"
+		// 	}
+
+		// },
+		{
+			"path": "pages/index/index",
+			"style": {
+				"enablePullDownRefresh": false,
+				"navigationBarTitleText": "%index%",
+				"transparentTitle": "auto",
+				"navigationBarBackgroundColor": "#0a172b",
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/login/login",
+			"style": {
+				"enablePullDownRefresh": false,
+				"navigationBarTitleText": "%login%",
+				"transparentTitle": "auto",
+				"navigationBarBackgroundColor": "#0a172b",
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/about/about",
+			"style": {
+				"navigationBarTitleText": "About Us",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#0a172b",
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/maintenance/maintenance",
+			"style": {
+				"navigationBarTitleText": "System Maintenance",
+				"enablePullDownRefresh": true,
+				"navigationBarBackgroundColor": "#0a172b",
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "Profile",
+				"enablePullDownRefresh": true,
+				"navigationBarBackgroundColor": "#0a172b",
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/order/order",
+			"style": {
+				"navigationBarTitleText": "%order%",
+				"enablePullDownRefresh": true,
+				"navigationBarBackgroundColor": "#0a172b",
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/customer/customer",
+			"style": {
+				"navigationBarTitleText": "Contact Us",
+				"enablePullDownRefresh": true,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/check_in/check_in",
+			"style": {
+				"navigationBarTitleText": "Check-In",
+				"enablePullDownRefresh": true,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/start/start",
+			"style": {
+				"navigationBarTitleText": "%start%",
+				"enablePullDownRefresh": true,
+				"navigationBarBackgroundColor": "#0a172b",
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/vip/vip",
+			"style": {
+				"navigationBarTitleText": "%vip%",
+				"enablePullDownRefresh": true,
+				"navigationBarBackgroundColor": "#0a172b",
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/register/register",
+			"style": {
+				"navigationBarTitleText": "%register%",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#0a172b",
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/search/search",
+			"style": {
+				"navigationBarTitleText": "搜索",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/address/address",
+			"style": {
+				"navigationBarTitleText": "选择地址",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		},  {
+			"path": "pages/auth-address/auth-address",
+			"style": {
+				"navigationBarTitleText": "选择地址",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/personal-auth/personal-auth",
+			"style": {
+				"navigationBarTitleText": "个人认证",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/expert/expert",
+			"style": {
+				"navigationBarTitleText": "达人列表",
+				"enablePullDownRefresh": true,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/expert-detail/expert-detail",
+			"style": {
+				"navigationBarTitleText": "达人详情",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/loufeng-detail/loufeng-detail",
+			"style": {
+				"navigationBarTitleText": "茶贴详情",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/agent-auth/agent-auth",
+			"style": {
+				"navigationBarTitleText": "代理认证",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/shop-auth/shop-auth",
+			"style": {
+				"navigationBarTitleText": "茶铺认证",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/game/game",
+			"style": {
+				"navigationBarTitleText": "游戏中心",
+				"enablePullDownRefresh": true,
+				"navigationBarBackgroundColor": "#0a172b",
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/video/video",
+			"style": {
+				"navigationBarTitleText": "视频",
+				"enablePullDownRefresh": true,
+				"navigationBarBackgroundColor": "#0a172b",
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/video-detail/video-detail",
+			"style": {
+				"navigationBarTitleText": "视频详情",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#0a172b",
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/my-teaposts/my-teaposts",
+			"style": {
+				"navigationBarTitleText": "我的茶贴",
+				"enablePullDownRefresh": true,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/hot-search/hot-search",
+			"style": {
+				"navigationBarTitleText": "热搜视频",
+				"enablePullDownRefresh": true,
+				"navigationBarBackgroundColor": "#0a172b",
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "pages/nickname-edit/nickname-edit",
+			"style": {
+				"navigationBarTitleText": "昵称编辑",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#0a172b",
+				"navigationStyle": "custom"
+			}
+		},  {
+			"path": "pages/recharge/recharge",
+			"style": {
+				"navigationBarTitleText": "Recharge",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/withdraw/withdraw",
+			"style": {
+				"navigationBarTitleText": "%withdraw%",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/user_info/user_info",
+			"style": {
+				"navigationBarTitleText": "%user_info%",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/password/password",
+			"style": {
+				"navigationBarTitleText": "%password%",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/message/message",
+			"style": {
+				"navigationBarTitleText": "Notifications",
+				"enablePullDownRefresh": true,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/message_log/message_log",
+			"style": {
+				"navigationBarTitleText": "Notifications",
+				"enablePullDownRefresh": true,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/notifications/notifications",
+			"style": {
+				"navigationBarTitleText": "Notifications",
+				"enablePullDownRefresh": false
+
+			}
+
+		},
+		{
+			"path": "pages/card_bind/card_bind",
+			"style": {
+				"navigationBarTitleText": "%bind%",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+
+			}
+
+		}, {
+			"path": "pages/wallet_log/wallet_log",
+			"style": {
+				"navigationBarTitleText": "Transaction",
+				"enablePullDownRefresh": true,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/content/content",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/original-videos/original-videos",
+			"style": {
+				"navigationBarTitleText": "原创视频",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/video-play/video-play",
+			"style": {
+				"navigationBarTitleText": "视频播放",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/invitation/invitation",
+			"style": {
+				"navigationBarTitleText": "Referral Code",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/withdraw_log/withdraw_log",
+			"style": {
+				"navigationBarTitleText": "%withdraw_log%",
+				"enablePullDownRefresh": true
+			}
+
+		}, {
+			"path": "pages/recharge_log/recharge_log",
+			"style": {
+				"navigationBarTitleText": "%recharge_log%",
+				"enablePullDownRefresh": true
+			}
+
+		}, {
+			"path": "pages/transfer_usdt/transfer_usdt",
+			"style": {
+				"navigationBarTitleText": "%transfer_usdt%",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/pay_password/pay_password",
+			"style": {
+				"navigationBarTitleText": "%pay_password%",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/app-update", //第2步新建的app-uodate.vue文件
+			"style": {
+				"navigationBarTitleText": "%update%",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"background": "transparent",
+					"webviewBGTransparent": true, //webview的背景是否透明//配合background属性防止跳转闪白
+					"popGesture": "none" //禁止侧滑关闭（ios）
+				}
+			}
+		}, {
+			"path": "pages/transfer_customer/transfer_customer",
+			"style": {
+				"navigationBarTitleText": "%transfer_customer%",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/my/my",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"enablePullDownRefresh": true,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/settings/settings",
+			"style": {
+				"navigationBarTitleText": "个人设置",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/brief-edit/brief-edit",
+			"style": {
+				"navigationBarTitleText": "个人简介",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/collections/collections",
+			"style": {
+				"navigationBarTitleText": "我的收藏",
+				"enablePullDownRefresh": true,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/likes/likes",
+			"style": {
+				"navigationBarTitleText": "我的点赞",
+				"enablePullDownRefresh": true,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/like-details/like-details",
+			"style": {
+				"navigationBarTitleText": "点赞详情",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/follows/follows",
+			"style": {
+				"navigationBarTitleText": "我的关注",
+				"enablePullDownRefresh": true,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/fans/fans",
+			"style": {
+				"navigationBarTitleText": "我的粉丝",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/promotion/promotion",
+			"style": {
+				"navigationBarTitleText": "推广激励",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/earnings/earnings",
+			"style": {
+				"navigationBarTitleText": "收益明细",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/game-select/game-select",
+			"style": {
+				"navigationBarTitleText": "选择游戏",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/game-recharge/game-recharge",
+			"style": {
+				"navigationBarTitleText": "游戏转账",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/game-withdraw/game-withdraw",
+			"style": {
+				"navigationBarTitleText": "游戏提现",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/short-video-list/short-video-list",
+			"style": {
+				"navigationBarTitleText": "短视频",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/short-video/short-video",
+			"style": {
+				"navigationBarTitleText": "短视频详情",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/user-profile/user-profile",
+			"style": {
+				"navigationBarTitleText": "个人信息",
+				"enablePullDownRefresh": true,
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/publish-video/publish-video",
+			"style": {
+				"navigationBarTitleText": "发布动态",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/publish-teapost/publish-teapost",
+			"style": {
+				"navigationBarTitleText": "发布茶贴",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/service-recharge/service-recharge",
+			"style": {
+				"navigationBarTitleText": "生活服务充值",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/service-pay/service-pay",
+			"style": {
+				"navigationBarTitleText": "服务支付",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		}
+	],
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"^u-(.*)$": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+		}
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "Profitero",
+		"navigationBarBackgroundColor": "#0a172b",
+		"backgroundColor": "#000"
+	},
+	"condition": { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [{
+			"name": "", //模式名称
+			"path": "", //启动页面，必选
+			"query": "" //启动参数，在页面的onLoad函数里面得到
+		}]
+	}
+}
