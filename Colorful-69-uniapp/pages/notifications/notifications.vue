@@ -34,7 +34,7 @@
 	.card {
 		width: 90vw;
 		height: 300rpx;
-		background-image: url(/static/Icon-026.png);
+		/* background-image: url(/static/Icon-026.png); */
 		border-radius: 15px;
 		margin: 0 auto;
 	}

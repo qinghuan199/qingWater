@@ -7,3 +7,4 @@ unpackage/dist/*
 .idea/encodings.xml
 .idea/misc.xml
 *.apk
+unpackage/*

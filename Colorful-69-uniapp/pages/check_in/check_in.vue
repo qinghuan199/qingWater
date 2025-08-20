@@ -473,7 +473,7 @@
 	}
 
 	::v-deep.u-modal {
-		background-image: url('/static/001.png');
+		// background-image: url('/static/001.png');
 		border-radius: 25rpx !important;
 		background-position: center;
 		background-size: 100% 100%;

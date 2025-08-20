@@ -96,7 +96,7 @@
 	// }
 
 	.codeBg {
-		background-image: url(/static/gof/g-9-42.png);
+		// background-image: url(/static/gof/g-9-42.png);
 		background-size: 100% 100%;
 
 		background-repeat: no-repeat;

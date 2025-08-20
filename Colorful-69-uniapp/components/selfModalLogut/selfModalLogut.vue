@@ -127,12 +127,12 @@
 	}
 
 	.modelBgTrue {
-		background-image: url('/static/SENDd/Daasity-Logo-02.png');
+		/* background-image: url('/static/SENDd/Daasity-Logo-02.png'); */
 		/* color: #2ae845; */
 	}
 
 	.modelBgFalse {
-		background-image: url('/static/SENDd/Daasity-Logo-02.png');
+		/* background-image: url('/static/SENDd/Daasity-Logo-02.png'); */
 		/* color: red; */
 	}
 
