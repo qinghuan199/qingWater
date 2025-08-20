@@ -68,4 +68,7 @@ body .van-toast .van-toast__icon {
   background-color: @theme-color !important;
   background: @theme-color !important;
 }
+.zhanwei{
+  height: 200px;
+}
 </style>

@@ -20,6 +20,7 @@ export default {
     data() {
         return {
             show: false,
+            value:''
 
         };
     },

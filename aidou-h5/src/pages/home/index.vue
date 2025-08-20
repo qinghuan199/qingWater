@@ -259,6 +259,7 @@ export default {
 
 .tiaokuan {
   padding: 15px;
+  height: 80vh;
 }
 
 .item.tiaokuan ul li {
