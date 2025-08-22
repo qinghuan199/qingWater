@@ -1,6 +1,6 @@
 <template>
   <div class="bg-container page">
-    <img class="bg-img" src="img/login/bg.jpg">
+    <!-- <img class="bg-img" src="img/login/login-bg.png"> -->
     <!-- <div class="container">
 		<video
 			class="background-video"
@@ -39,12 +39,12 @@
                 <van-icon :name="passwordType === 'password' ? 'closed-eye' : 'eye-o'" @click="switchPasswordType" />
               </template>
             </van-field>
-            <!-- <div class="reset-text">
+            <div class="reset-text">
               <span>忘记密码？</span>
             </div>
             <div @click="toRegister()" class="register-text">
               <span>没有账户？马上注册</span>
-            </div> -->
+            </div>
             <van-button class="login-btn" type="primary" size="normal" @click="doLogin()">登录</van-button>
           </div>
         </div>
@@ -205,7 +205,7 @@ export default {
   text-align: center;
   font-size: 45px;
   font-weight: 700;
-  color: #f2cba7;
+  color: #fff;
   letter-spacing: 5px;
 }
 
@@ -253,9 +253,9 @@ export default {
 }
 
 .login .wrapper .loginForm .register-text span {
-  color: #f0c7a2;
+  color: #fff;
   font-size: 25px;
-  font-weight: bold;
+  font-weight: 500;
   line-height: 20px;
 }
 
