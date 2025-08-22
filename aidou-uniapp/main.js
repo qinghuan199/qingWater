@@ -7,7 +7,11 @@ import store from './store';
 // 公用
 
 
-
+//去除console.log控制输出
+if (location.hostname.indexOf('localhost') == -1 && location.hostname.indexOf('192.168.') == -1 && location.hostname
+	.indexOf('127.0.0.1') == -1) {
+	console.log = () => {}
+}
 import hxNavbar from "./components/hx-navbar/hx-navbar.vue";
 import servingView from "./components/serving-view/index.vue"
 Vue.component('serving-view',servingView);
