@@ -252,8 +252,8 @@
                                                   </view> -->
 									<!-- 文字消息 -->
 									<view v-if="row.msg.type==0 && !isImage(row.msg.content.text)" class="bubble">
-										  <rich-text :nodes="parseContent(row.msg.content.text)" space="true" />
-									<!-- 	<rich-text :nodes="row.msg.content.text ? getHtml(row.msg.content.text) : ' '"
+										<rich-text :nodes="parseContent(row.msg.content.text)" space="true" />
+										<!-- 	<rich-text :nodes="row.msg.content.text ? getHtml(row.msg.content.text) : ' '"
 											space="true" /> -->
 									</view>
 									<!-- 文字消息 图片链接 -->
@@ -382,7 +382,7 @@
 									mode="heightFix">
 									<view class="tool_text">语音通话</view>
 							</view>
-							
+
 							<view class="list-box" @tap="chooseImage">
 								<image class="fun-icon" src="../../static/theme/default/Image.png" mode="heightFix">
 								</image>
@@ -396,7 +396,7 @@
 								<view class="tool_text">拍摄</view>
 							</view>
 
-<!-- 							<view class="list-box" @tap="video">
+							<!-- 							<view class="list-box" @tap="video">
 								<image class="fun-icon" src="../../static/theme/default/message/video.png"
 									mode="heightFix">
 								</image>
@@ -417,20 +417,20 @@
 								</image>
 								<view class="tool_text">视频</view>
 							</view>
-							
+
 							<view class="list-box" @tap="handRedEnvelopes">
 								<image class="fun-icon" src="../../static/theme/default/envelope_icon.png"
 									mode="heightFix">
 								</image>
 								<view class="tool_text">红包</view>
 							</view>
-							
+
 							<view class="list-box" @tap="chooseChuo">
 								<image class="fun-icon" src="../../static/theme/default/tool_icon.png" mode="heightFix">
 								</image>
 								<view class="tool_text">戳一戳</view>
 							</view>
-							
+
 							<view class="list-box" @tap="sendPos">
 								<image class="fun-icon" src="../../static/theme/default/location_icon.png"
 									mode="heightFix">
@@ -438,7 +438,7 @@
 								<view class="tool_text2">位置</view>
 							</view>
 
-<!-- 							<view class="list-box" @tap="videoCall(1)" v-if="msgList.type == 0">
+							<!-- 							<view class="list-box" @tap="videoCall(1)" v-if="msgList.type == 0">
 								<image class="fun-icon" src="../../static/theme/default/message/concat.png"
 									mode="heightFix">
 									<view class="tool_text">视频通话</view>
@@ -484,6 +484,11 @@
 								<image class="fun-icon" src="../../static/theme/default/file_icon.png" mode="heightFix">
 								</image>
 								<view class="tool_text">文件</view>
+							</view>
+							<view class="list-box" @tap="chooseReply" v-if="my_data.is_customer_service==1">
+								<image class="fun-icon" src="../../static/theme/default/business_card_icon.png" mode="heightFix">
+								</image>
+								<view class="tool_text">快捷回复</view>
 							</view>
 						</view>
 					</swiper-item>
@@ -632,6 +637,8 @@
 				</select-friend>
 			</view>
 		</uni-popup>
+		
+
 	</view>
 </template>
 <script>
@@ -783,6 +790,10 @@
 				popHeight: "", //todo弹出选择好友高度
 
 				members: [], //群成员
+				
+				// 快捷回复相关
+	
+				quickReplyList: [], // 快捷回复列表数据
 			};
 		},
 		onBackPress(options) {
@@ -949,32 +960,37 @@
 			}
 		},
 		methods: {
-			 isImage(content) {
-			    return /\.(jpg|jpeg|png|gif|webp)$/i.test(content);
-			  },
-			
-			  // 解析 HTML（支持转义和非转义）
-			  parseContent(content) {
-			    if (!content) return '';
-			
-			    // 先反转义 HTML
-			    let decoded = content
-			      .replace(/&lt;/g, "<")
-			      .replace(/&gt;/g, ">")
-			      .replace(/&quot;/g, '"')
-			      .replace(/&amp;/g, "&")
-			      .replace(/&#39;/g, "'");
-				    decoded = decoded.replace(/<img/gi, '<img style="width:200px;height:auto;display:block;"');
-			    // uni-app rich-text 需要传数组或对象
-			    // 如果 decoded 是纯字符串 HTML，这里直接返回
-			    return decoded;
-			  },
+			isImage(content) {
+				return /\.(jpg|jpeg|png|gif|webp)$/i.test(content);
+			},
+
+			// 解析 HTML（支持转义和非转义）
+			parseContent(content) {
+				if (!content) return '';
+
+				// 先反转义 HTML
+				let decoded = content
+					.replace(/&lt;/g, "<")
+					.replace(/&gt;/g, ">")
+					.replace(/&quot;/g, '"')
+					.replace(/&amp;/g, "&")
+					.replace(/&#39;/g, "'");
+				decoded = decoded.replace(/font-family:\s*"PingFang SC"/gi, "font-family:'PingFang SC'");
+				decoded = decoded.replace(/<img/gi, '<img style="width:200px;height:auto;display:block;"');
+				decoded = decoded.replace(
+					/<video/gi,
+					'<video style="max-width:100%;height:auto;display:block;" controls'
+				);
+				// uni-app rich-text 需要传数组或对象
+				// 如果 decoded 是纯字符串 HTML，这里直接返回
+				return decoded;
+			},
 			...mapMutations([
 				"regSendVoiceEvent",
 				"regOnStartEvent",
 				"regVudioEndEvent",
 			]),
-			
+
 			// 消息是否是图片
 			isImage(con) {
 				// console.log("con",con);
@@ -1382,6 +1398,70 @@
 				this.showUploadFile = true;
 				// #endif
 			},
+			//快捷回复
+			chooseReply(){
+				this.hideDrawer(); // 隐藏更多功能抽屉
+				this.getQuickReplyList(); // 获取快捷回复列表
+			},
+			
+			// 获取快捷回复列表
+			getQuickReplyList() {
+				let _this = this;
+				console.log('开始获取快捷回复列表');
+				this.$httpSend({
+					path: '/im/message/custom',
+					data: {
+						list_id: this.list_id
+					},
+					success_action: true, // 强制执行success回调，不管err状态
+					success(res) {
+					// 添加Toast提示来确认API调用
+						if (res.err == 1 && res.data) {
+							_this.quickReplyList = res.data || [];
+							if (_this.quickReplyList.length > 0) {
+								// 使用原生弹窗显示快捷回复列表
+								const itemList = _this.quickReplyList.map(item => {
+									// 去除HTML标签，只显示纯文本
+									return item.content.replace(/<[^>]*>/g, '');
+								});
+								uni.showActionSheet({
+									title: '快捷回复类型',
+									itemList: itemList,
+									success: function(actionRes) {
+										if (!actionRes.cancel) {
+											const selectedItem = _this.quickReplyList[actionRes.tapIndex];
+											_this.selectQuickReply(selectedItem.content);
+										}
+									}
+								});
+							} else {
+								uni.showToast({
+									title: '暂无快捷回复',
+									icon: 'none'
+								});
+							}
+						} else {
+							uni.showToast({
+								title: res.msg || '获取快捷回复失败',
+								icon: 'none'
+							});
+						}
+					},
+					fail() {
+						uni.showToast({
+							title: '网络错误，请重试',
+							icon: 'none'
+						});
+					}
+				});
+			},
+			
+			// 选择快捷回复内容
+			selectQuickReply(content) {
+				// 去除HTML标签，只保留纯文本
+				this.textMsg = content.replace(/<[^>]*>/g, '');
+				this.sendText(); // 直接发送消息
+			},
 			// 戳一戳
 			chooseChuo() {
 				this.sendChuoYiChuoMsg();
@@ -1616,7 +1696,7 @@
 					success_action: true,
 					success(res) {
 						if (res.err === 0) {
-							console.log("通话数据",res);
+							console.log("通话数据", res);
 							//图片转化
 							res.data.myavatar = _this.staticPhoto + res.data.myavatar;
 							res.data.avatar = _this.staticPhoto + res.data.avatar;
@@ -1635,7 +1715,7 @@
 					}
 				})
 				console.log("开始打电话".data);
-			
+
 				uni.$TUICalling.call({
 						callMediaType: data.callType,
 						userID: user_id,
@@ -2830,6 +2910,7 @@
 
 <style lang="scss">
 	@import "@/static/css/chat/style.scss";
+
 	.other {
 		.left {
 			position: relative;
@@ -3080,4 +3161,6 @@
 		width: 40rpx;
 		height: 40rpx;
 	}
+	
+
 </style>
