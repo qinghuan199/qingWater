@@ -1,6 +1,6 @@
 <template>
   <div class="bg-container page">
-    <!-- <img class="bg-img" src="img/login/login-bg.png"> -->
+    <img class="bg-img" src="img/login/bg.jpg">
     <!-- <div class="container">
 		<video
 			class="background-video"
@@ -217,7 +217,7 @@ export default {
   text-align: center;
   font-size: 45px;
   font-weight: 700;
-  color: #fff;
+  color: #f2cba7;
   letter-spacing: 5px;
 }
 
@@ -289,7 +289,7 @@ export default {
   font-weight: bolder;
   text-align: center;
   margin-top: 30px;
-  color: #ddd;
+  color: #f2cba7;
   text-decoration: underline;
 
 
