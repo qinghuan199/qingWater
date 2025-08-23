@@ -252,9 +252,8 @@
                                                   </view> -->
 									<!-- 文字消息 -->
 									<view v-if="row.msg.type==0 && !isImage(row.msg.content.text)" class="bubble">
-										<rich-text :nodes="parseContent(row.msg.content.text)" space="true" />
-										<!-- 	<rich-text :nodes="row.msg.content.text ? getHtml(row.msg.content.text) : ' '"
-											space="true" /> -->
+											<rich-text :nodes="row.msg.content.text ? getHtml(row.msg.content.text) : ' '"
+											space="true" />
 									</view>
 									<!-- 文字消息 图片链接 -->
 									<view v-if="row.msg.type==0 && isImage(row.msg.content.text)" class="bubble"
@@ -1030,32 +1029,6 @@
 				return /\.(jpg|jpeg|png|gif|webp)$/i.test(content);
 			},
 
-			// 解析 HTML（支持转义和非转义）
-			parseContent(content) {
-				if (!content) return '';
-
-				// 先反转义 HTML
-				let decoded = content
-					.replace(/&lt;/g, "<")
-					.replace(/&gt;/g, ">")
-					.replace(/&quot;/g, '"')
-					.replace(/&amp;/g, "&")
-					.replace(/&#39;/g, "'");
-				decoded = decoded.replace(/font-family:\s*"PingFang SC"/gi, "font-family:'PingFang SC'");
-				decoded = decoded.replace(/<img/gi, '<img style="width:200px;height:auto;display:block;"');
-				decoded = decoded.replace(
-					/<video/gi,
-					'<video style="max-width:100%;height:auto;display:block;" controls'
-				);
-				// uni-app rich-text 需要传数组或对象
-				// 如果 decoded 是纯字符串 HTML，这里直接返回
-				return decoded;
-			},
-			...mapMutations([
-				"regSendVoiceEvent",
-				"regOnStartEvent",
-				"regVudioEndEvent",
-			]),
 
 			// 消息是否是图片
 			isImage(con) {
