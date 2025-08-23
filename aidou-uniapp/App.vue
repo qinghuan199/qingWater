@@ -53,6 +53,7 @@
 				doodling: '',
 				phone: '',
 				circle_img: 'default_circle_img.jpg?_=3.1415926',
+				is_customer_service:null,
 			},
 			isOnlie: true,
 			dragInfo: {
